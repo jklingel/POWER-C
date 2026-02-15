@@ -16,3 +16,5 @@
 #define USHRT_MAX 65535
 #define UINT_MIN 0
 #define UINT_MAX 65535
+#define LONG_MIN (-65535)
+#define LONG_MAX 65535
