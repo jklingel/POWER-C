@@ -3,4 +3,4 @@ This is my repository for various functions and tools for POWER C. POWER C is an
 
 A very important repository for POWER C is https://github.com/GroundhogGrafix/PowerC-C64-C128/tree/main/PowerC. 
 
-See https://janklingel.de/2026/01/09/programming-c-on-the-c64-in-power-c/ for more information on POWER C.
+See https://janklingel.de/ for more information on POWER C.
