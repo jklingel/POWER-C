@@ -1,0 +1,31 @@
+conio object library, re-engineered from Borland C
+Created by Jan Klingel on 02/21/2026
+Version 1.0
+
+As of now includes the following functions:
+
+clrscr(void) /* Clear the screen */
+textcolor(char color) /* Set the text color. Color codes are defined in conio.h */
+framecolor(char color) /* Set the frame color */
+background(char color) /* Set the background color */
+int gotoxy(char x, char y) /* Set the cursor position. Returns 1 if the x or y values is greater than the max number of columns and rows of the screen, else 0 */
+
+Usage:
+  clrscr();
+  textcolor(BROWN);
+  background(WHITE);
+  gotoxy(5,5);
+
+Linking:
+
+Include conio.h in your code. When linking the object files, include the conio library:
+	$ link -s
+	> yourcode.o
+	> conio.o
+	^
+	output file name: yourcode
+
+You can now exit the shell ('bye') and then load and run your code:
+
+	load "yourcode", 9,1
+	run
