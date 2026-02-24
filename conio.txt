@@ -1,31 +1,44 @@
 conio object library, re-engineered from Borland C
-Created by Jan Klingel on 02/21/2026
-Version 1.0
+Created by Jan Klingel on 02/24/2026
+Version 1.1
 
 As of now includes the following functions:
 
-clrscr(void) /* Clear the screen */
-textcolor(char color) /* Set the text color. Color codes are defined in conio.h */
-framecolor(char color) /* Set the frame color */
-background(char color) /* Set the background color */
-int gotoxy(char x, char y) /* Set the cursor position. Returns 1 if the x or y values is greater than the max number of columns and rows of the screen, else 0 */
-
+clrscr(void) 			Clear the screen
+setlowercase()			Select the lower/upper character set
+setgraphics()			Select the grahics/upper charcater set
+int textcolor(char color)	Set the text color. Color codes are defined in conio.h
+				Returns 0 when valid color value selected, else 1
+int framecolor(char color)	Set the frame color
+				Returns 0 when valid color value selected, else 1
+int background(char color)	Set the background color
+				Returns 0 when valid color value selected, else 1
+int gotoxy(char x, char y)	Set the cursor position. Returns 1 if the x or y values
+				are greater than the max number of columns and rows of the
+				screen, else 0
 Usage:
   clrscr();
+  setlowercase();
+  setgraphics();
   textcolor(BROWN);
   background(WHITE);
   gotoxy(5,5);
 
-Linking:
+Coding:
+  Include conio.h in your code:
 
-Include conio.h in your code. When linking the object files, include the conio library:
+	#include <conio.h>
+
+Linking:
+  When linking the object files, include the conio library:
+
 	$ link -s
 	> yourcode.o
 	> conio.o
 	^
 	output file name: yourcode
 
-You can now exit the shell ('bye') and then load and run your code:
+  You can now exit the shell ('bye') and then load and run your code:
 
-	load "yourcode", 9,1
+	load "yourcode",9,1
 	run
