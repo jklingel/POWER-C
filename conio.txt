@@ -1,6 +1,6 @@
 conio object library, re-engineered from Borland C
-Created by Jan Klingel on 02/24/2026
-Version 1.1
+Created by Jan Klingel on 03/02/2026
+Version 1.2
 
 As of now includes the following functions:
 
@@ -16,6 +16,10 @@ int background(char color)	Set the background color
 int gotoxy(char x, char y)	Set the cursor position. Returns 1 if the x or y values
 				are greater than the max number of columns and rows of the
 				screen, else 0
+int clearkbbuffer()		Clears the keyboard buffer and returns 0 if
+				successful, otherwise 1
+int kbhit()			Returns nonzero if a key has been pressed, else 0
+
 Usage:
   clrscr();
   setlowercase();
@@ -23,6 +27,14 @@ Usage:
   textcolor(BROWN);
   background(WHITE);
   gotoxy(5,5);
+
+  int key = 0;
+  if (clearkbbuffer() == 0) {
+    printf ("Press any key to exit\n");
+    while (key == 0) {
+      key = kbhit();
+    }
+  }
 
 Coding:
   Include conio.h in your code:
